@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
 
 const menuData = [
   {
@@ -48,22 +49,41 @@ const menuData = [
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Header />
-      <Menu />
+      <Menus />
       <Footer />
     </div>
   );
 }
 function Header() {
-  return <h1>MUSANGA FOODS</h1>;
+  return (
+    <header className="header">
+      <h1>MUSANGA FOODS</h1>
+    </header>
+  );
 }
-
-function Menu() {
+function Menus() {
+  return (
+    <div className="menu">
+      <h2>Our Menu</h2>
+      <Menu photoName="menu/corn.jpg" ingredients="Raw Corn and Corn Salad" />
+      <Menu
+        photoName="menu/fried_rice.jpg"
+        ingredients="Green Peas and Sweet Corn"
+      />
+      <Menu
+        photoName="menu/jollof_rice.jpg"
+        ingredients="Tomatoes and Jollof Spice"
+      />
+    </div>
+  );
+}
+function Menu(props) {
   return (
     <div>
-      <img src={menuData[0].photoName} alt="corn" />
-      <h4>Raw Corn and Corn Salad</h4>
+      <img src={props.photoName} alt="corn" />
+      <h4>{props.ingredients}</h4>
     </div>
   );
 }
