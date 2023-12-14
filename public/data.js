@@ -1,6 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
 const menuData = [
   {
     name: "Corn",
@@ -45,34 +42,3 @@ const menuData = [
     soldOut: false,
   },
 ];
-
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Menu />
-      <Footer />
-    </div>
-  );
-}
-function Header() {
-  return <h1>MUSANGA FOODS</h1>;
-}
-
-function Menu() {
-  return (
-    <div>
-      <img src={menuData[0].photoName} alt="corn" />
-      <h4>Raw Corn and Corn Salad</h4>
-    </div>
-  );
-}
-function Footer() {
-  return <p>We are happy to welcome you at 12:00 to 22:00.</p>;
-}
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
