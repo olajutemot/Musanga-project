@@ -67,24 +67,20 @@ function Menus() {
   return (
     <div className="menu">
       <h2>Our Menu</h2>
-      <Menu photoName="menu/corn.jpg" ingredients="Raw Corn and Corn Salad" />
-      <Menu
-        photoName="menu/fried_rice.jpg"
-        ingredients="Green Peas and Sweet Corn"
-      />
-      <Menu
-        photoName="menu/jollof_rice.jpg"
-        ingredients="Tomatoes and Jollof Spice"
-      />
+      <ul className="foods">
+        {menuData.map((food) => (
+          <Menu foodObject={food} key={food.name} />
+        ))}
+      </ul>
     </div>
   );
 }
 function Menu(props) {
   return (
-    <div>
-      <img src={props.photoName} alt="corn" />
-      <h4>{props.ingredients}</h4>
-    </div>
+    <li className="food">
+      <img src={props.foodObject.photoName} alt="corn" />
+      <h4>{props.foodObject.ingredients}</h4>
+    </li>
   );
 }
 function Footer() {
